@@ -11,6 +11,7 @@ type TaskCheckBox struct {
 	gast.BaseInline
 	IsChecked bool
 	IsRanged bool
+	IsColored bool
 }
 
 // Dump implements Node.Dump.
@@ -30,9 +31,10 @@ func (n *TaskCheckBox) Kind() gast.NodeKind {
 }
 
 // NewTaskCheckBox returns a new TaskCheckBox node.
-func NewTaskCheckBox(checked bool, ranged bool) *TaskCheckBox {
+func NewTaskCheckBox(checked bool, ranged bool, colored bool) *TaskCheckBox {
 	return &TaskCheckBox{
 		IsChecked: checked,
 		IsRanged: ranged,
+		IsColored: colored,
 	}
 }
